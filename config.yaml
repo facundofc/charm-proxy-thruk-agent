@@ -1,0 +1,17 @@
+# Copyright 2021 Facundo Ciccioli
+# See LICENSE file for licensing details.
+options:
+  url:
+    type: string
+    default: "http://127.0.0.1"
+    description: "Hostname for the remote thruk instance"
+  thruk_key:
+    type: string
+    default: ""
+    description: "Thruk key for the remote thruk instance"
+  nagios_context:
+    default: "bootstack"
+    type: string
+    description: |
+      This string will be sent through the thruk-agent relation and will be
+      used as both the peer name and section in the Thruk master instance.

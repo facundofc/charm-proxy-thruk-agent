@@ -1,0 +1,23 @@
+# Copyright 2021 Facundo Ciccioli
+# See LICENSE file for licensing details.
+name: proxy-thruk-agent
+description: |
+  Proxy charm which stands for a thruk-agent running on a remote site.
+summary: |
+  Locally, this charm can be used together with thruk-master-k8s charm to add
+  remote Thruk agents as peers to the Thruk master instance.
+
+# This container is necessary while workload-less k8s charms (proxy charms) are
+# not supported.
+containers:
+  alpine:
+    resource: stub-image
+
+resources:
+  stub-image:
+    type: oci-image
+    description: Useless image, just because a container based charm has to have one (alpine)
+
+provides:
+  thruk-agent:
+    interface: thruk-agent
