@@ -11,10 +11,10 @@ summary: |
 # not supported.
 containers:
   alpine:
-    resource: stub-image
+    resource: image
 
 resources:
-  stub-image:
+  image:
     type: oci-image
     description: Useless image, just because a container based charm has to have one (alpine)
 
