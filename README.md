@@ -12,7 +12,7 @@ unit and the remote Thruk agent.
 
 This charm is the Kubernetes version of the
 [thruk-external-agent](https://charmhub.io/thruk-external-agent) charm. Do note
-that at the time of writing, [Juju does not yet support proxy charms](https://bugs.launchpad.net/juju/+bug/1826205)
+that at the time of writing, [Juju does not support proxy charms](https://bugs.launchpad.net/juju/+bug/1826205)
 on Kubernetes environments. This means that a workload container is still
 required even though it sits idle. It's recommended to use a very lightweight
 image such as Alpine as the workload image.
@@ -31,8 +31,8 @@ are required:
 This information is communicated to the Thruk master unit upon establishing the
 `thruk-agent` relation to it:
 
-    juju deploy thruk-master-k8s --resource thruk-image=meyer91/thruk
-    juju deploy proxy-thruk-agent some-external-site --resource stub-image=alpine \
+    juju deploy thruk-master-k8s --resource image=meyer91/thruk
+    juju deploy proxy-thruk-agent some-external-site --resource image=alpine \
         --config url=http://url.to.remote.thruk.agent.com/thruk \
         --config thruk_key=fhwjr928 \
         --config nagios_context=some-external-site

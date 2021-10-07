@@ -16,7 +16,7 @@ containers:
 resources:
   image:
     type: oci-image
-    description: Useless image, just because a container based charm has to have one (alpine)
+    description: Useless image, just because a container based charm must have one (alpine)
 
 provides:
   thruk-agent:
